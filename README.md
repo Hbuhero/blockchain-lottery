@@ -1,66 +1,43 @@
-## Foundry
+# Blockchain Lottery System
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project is a **Blockchain Lottery System** developed as a proof of skill in utilizing Foundry, Chainlink tools like VRF (Verifiable Random Function), and Solidity. The project was built step to step from Cyfrin Updraft Foundry Fundamental Course, and it serves as a comprehensive demonstration of my understanding and proficiency in smart contract development.
 
-Foundry consists of:
+## Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The Blockchain Lottery System is a decentralized application (dApp) that allows participants to enter a lottery by paying an entry fee. A winner is selected at random using Chainlink VRF, ensuring fairness and transparency. The project is designed to showcase the integration of key blockchain development tools and concepts.
 
-## Documentation
+### Key Features
+- **Random Winner Selection**: The winner is selected using Chainlink VRF, providing verifiable randomness.
+- **Automated Lottery Cycle**: The lottery runs on a cycle, automatically selecting a winner and resetting after each round.
+- **Secure and Transparent**: All transactions are recorded on the blockchain, ensuring transparency and security.
 
-https://book.getfoundry.sh/
+## Tools and Technologies
 
-## Usage
+- **Foundry**: A fast and efficient Ethereum development environment used for testing and deploying the smart contract.
+- **Solidity**: The smart contract programming language used to develop the lottery system.
+- **Chainlink VRF**: Provides a secure and verifiable source of randomness, crucial for selecting the lottery winner in a fair manner.
 
-### Build
+## How It Works
 
-```shell
-$ forge build
-```
+1. **Participants Enter the Lottery**: Users enter the lottery by sending a specified amount of cryptocurrency to the smart contract.
+2. **Random Number Generation**: Once the entry period ends, the smart contract requests a random number from Chainlink VRF.
+3. **Winner Selection**: The random number is used to select a winner from the list of participants.
+4. **Prize Distribution**: The entire pool of funds is transferred to the winner's address.
+5. **Lottery Reset**: The contract resets, allowing for a new round of the lottery to begin.
 
-### Test
+## Project Structure
 
-```shell
-$ forge test
-```
+- `contracts/`: Contains the Solidity smart contracts.
+- `scripts/`: Deployment scripts used with Foundry.
+- `test/`: Unit tests written in Solidity to ensure the correctness of the contract.
 
-### Format
+## Prerequisites
 
-```shell
-$ forge fmt
-```
+- **Foundry**: Make sure you have Foundry installed for testing and deployment.
 
-### Gas Snapshots
+## Installation
 
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/blockchain-lottery.git
+   cd blockchain-lottery
